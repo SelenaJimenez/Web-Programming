@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Project 1: Error 404
+{% endblock %}
+
+
+{% block heading %}
+   ---Error 404---
+{% endblock %}
+
+{% block body %}
+    <center>
+        <h2>{{ message }}</h2>
+        <a href="{{url_for('login')}}">Get back</a>
+    </center>
+{% endblock %}

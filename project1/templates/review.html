@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{isbn}}
+{% endblock %}
+
+{% block head %}
+    <a href="{{ url_for('logout') }}">¡Log Out!</a>
+{% endblock %}
+
+{% block body %}
+
+    {% for i in book %}
+        <h1>---Book Information--- </h1>
+        <h2>{{i.title}}</h2>
+        <h4>By {{i.author}}</h4>  
+        <p>Published {{i.year}} | isbn {{i.isbn}}</p>
+        <p>How many people had review: {{i.review_count}}</p>
+        <p>Score: {{i.average_score}}</p>
+    {% endfor %}
+
+
+
+    <h1>---Write a review--- </h1>
+    {% for r in reviews %}
+        <p>{{r.username}} said: {{r.review}} </p>
+    {% endfor %}
+    <p>{{message}}</p>   
+
+    {% if p != False %}
+    <form action="{{ url_for('isbn',isbn=isbn) }}" method="post">
+
+        <div class="form-group">        
+            <li>
+                <input type="text" name="commit" placeholder="Write a review">
+            </li>
+        </div>
+
+        <div class="form-group"> 
+            <li>
+                <input type="number" max="5" name="grade" placeholder="Write a calification">
+            </li>
+        </div>
+        <button class="btn btn-success"> Post review</button>
+    </form>
+    {% endif %}
+
+
+    <div class="form-group">
+        <center>
+            <h1>---Goodreads Review---</h1>
+        </center>
+        <p>{{ res }}</p>
+        <p>{{ count }}</p>
+    </div>
+
+    <div class="form-group">
+        <a href="{{ url_for('book') }}">Search other book </a>
+    </div>
+
+    {% endblock %}
