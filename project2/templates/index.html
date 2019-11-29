@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    ---Project2: Start---
+{% endblock %}
+
+
+{% block body %}
+            <h1 id="printname"> </h1>
+        
+            <div id="tpname"> </div>
+        <hr>
+        <div id="yes">
+        {% for i in data %}
+       <li>
+            <a href="{{ url_for('channel',name_channel=i) }}"> {{ i }} </a>
+        </li>
+        {% endfor %}
+        </div>
+        <!--hidden stuff-->
+        <input id="nameSM" placeholder="Write a Message" style="visibility: hidden">
+        <button style="visibility: hidden" id="btnSM">Send Message</button>
+    
+  
+    <!-- Trigger/Open The Modal -->
+    <button style="visibility: hidden" id="myBtn">Open Modal</button>
+    
+    <!-- The Modal -->
+    
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <center>
+            <span class="close">&times;</span>
+            <h2>Do u want to go back to the active channel?</h2>
+          </center>
+        </div>
+        <div class="modal-body">
+          <button class="btn btn-success"  id="okey" onclick="f(0)">Yes</button>
+          <button class="btn btn-success" id="nookey"onclick="f(1)">No</button>
+        </div>
+      </div>
+    </div>
+  
+    
+    <script>
+
+      var modal = document.getElementById("myModal");
+      var btn = document.getElementById("myBtn");     // Get the button that opens the modal
+      var span = document.getElementsByClassName("close")[0];     // Get the <span> element that closes the modal
+      if (localStorage.getItem('channel')!=null){     // When the user clicks the button, open the modal 
+        modal.style.display = "block";
+      }
+
+      span.onclick = function() {     // When the user clicks on <span> (x), close the modal
+        modal.style.display = "none";
+      }
+          
+      window.onclick = function(event) {      // When the user clicks anywhere outside of the modal, close it
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+      function f(x){
+          if(x==0){
+              window.location='channel'+localStorage.getItem('channel'); 
+          }
+          else{
+              modal.style.display = "none";
+          }
+      }
+    
+    </script>
+    
+{% endblock %}

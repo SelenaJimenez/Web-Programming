@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ name_channel }}
+{% endblock %}
+
+{% block body %}
+<div class="form-group">
+    <input id="nameSM" placeholder="Write a Message" >
+    <button  id="btnSM" class="btn btn-danger" >Send Message</button>
+</div>
+        <script >setchannel("{{name_channel}}")</script>
+       
+        <div id={{ name_channel }}>
+        {% for i in channel %}    
+            <h4>{{ channel[i]["name"] }} </h4>
+            <p> {{ channel[i]["mess"] }} </p>
+            <p> {{ channel[i]["date"] }} </p>
+        {% endfor %}
+        </div>
+        
+        <!--nulll-->
+        
+        <button style="visibility: hidden" id="btn">Add channnel</button>
+        <input style="visibility: hidden" id="name" placeholder="type name of channel">
+        <h1 style="visibility: hidden"id="printname"> </h1>
+        <div style="visibility: hidden" id="tpname"> </div>
+        <!--nulll--> 
+
+{% endblock %}
