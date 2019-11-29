@@ -1,0 +1,29 @@
+/*Media*/
+@media screen and (max-width:640px) {
+    body{
+    background-color:red;}
+}
+
+.chibi{
+    padding: 20px 0px;
+}
+
+/*  imagen de fondo, ps: te odio scss*/
+.total {
+    background: url(exoplanet_bg.jpg) no-repeat center center;
+    background-size:cover;
+    height: 700px;
+}
+
+.parcial{
+    background: url(exoplanet_bg.jpg) no-repeat center center;
+    background-size:cover;
+    padding-top: 100px;
+    height: 200px;
+    background-repeat: repeat;
+}
+
+h2{
+    font-size: 75px;
+    color:rgb(226, 116, 190) ;
+}

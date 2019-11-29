@@ -1,0 +1,69 @@
+@charset "UTF-8";
+/*----------------------INHETIRANCE---------------------------*/
+span {
+  color: #535353;
+}
+
+.inhe span {
+  color: red;
+}
+
+/*----------------------Estilo barra de navegación---------------------------*/
+nav {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  background: #141414;
+}
+nav ul {
+  margin: 0 auto;
+  width: 940px;
+  list-style: none;
+}
+nav ul li {
+  float: left;
+}
+nav ul li a {
+  display: block;
+  margin-right: 20px;
+  width: 140px;
+  font-size: 20px;
+  line-height: 44px;
+  text-align: center;
+  text-decoration: none;
+  color: #c2d6e0;
+}
+nav ul li a:hover {
+  color: #fff;
+}
+
+/*----------------------Estilo barra de navegación---------------------------*/
+#contenedor {
+  background-color: none;
+  border-radius: 15px;
+  padding: 200px 100px;
+}
+
+h1 {
+  /*font: 100% $font-primary;*/
+  color: #c2d6e0;
+  font-size: 100px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/*# sourceMappingURL=style.css.map */
