@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Project 1: Books
+{% endblock %}
+
+{% block head %}
+    <a href="{{ url_for('logout') }}">¡Log Out!</a>
+{% endblock %}
+
+
+{% block heading %}
+   ---Books: Start---
+{% endblock %}
+
+{% block body %}        
+    <center>    
+         <h1>{{ message }}</h1>         
+    </center>
+    <form action="{{ url_for('book') }}" method="post">
+        <div class="form-group">
+            <li>
+                <input type="integer" name="isbn" placeholder="ISBN">
+            </li>
+        </div>
+
+        <div class="form-group">
+            <li>
+                <input type="text" name="title" placeholder="Title">
+            </li>
+        </div>
+
+        <div class="form-group">                    
+            <li>
+                <input type="text" name="author" placeholder="Author">
+            </li>
+        </div>
+                    
+        <button class="btn btn-danger">Search</button>
+       
+        {{ error }}
+
+    </form>
+
+    <ul>       
+    {% for book in book %}
+        <li>
+            <a href="{{ url_for('isbn', isbn=book.isbn) }}">            
+            {{ book.isbn }}   ,   {{ book.title }}   ,  {{ book.author }} 
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

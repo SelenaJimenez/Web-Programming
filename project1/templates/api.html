@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Project 1: API
+{% endblock %}
+
+
+{% block heading %}
+   ---API---
+{% endblock %}
+
+{% block body %}
+    
+            <ul> 
+            {% for info in info %}
+                <li>        
+                    ISBN: {{ info.isbn }}
+                </li>
+
+                <li>        
+                    TITLE: {{ info.title }}
+                </li>
+
+                <li>        
+                    AUTHOR: {{ info.author }},
+                </li>
+
+                <li>        
+                    YEAR:{{ info.year }} 
+                </li>
+
+                <li>        
+                    REVIEW COUNT: {{ info.review_count }}
+                </li>
+
+                <li>        
+                    AVERAGE SCORE:{{ info.average_score }} 
+                </li>
+            {% endfor %}
+            </ul>
+    
+    <center>
+        <a href="{{url_for('login')}}">Go to Books Section</a>
+    </center>
+{% endblock %}
