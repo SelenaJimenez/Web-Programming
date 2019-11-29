@@ -1,0 +1,73 @@
+$letterH1: #c2d6e0;
+
+/*----------------------INHETIRANCE---------------------------*/
+span {
+    color: rgb(83, 83, 83);
+}
+
+.inhe span {
+    color: red;
+}    
+
+/*----------------------Estilo barra de navegación---------------------------*/
+/*NESTING!!*/
+nav {
+    position : absolute;
+    left : 0;
+    width : 100%;
+    background : #141414;
+
+    & ul {
+        margin : 0 auto;
+        width : 940px;
+        list-style : none;
+    
+        & li {
+            float : left;
+            
+            & a {
+                display : block;
+                margin-right : 20px;
+                width : 140px;
+                font-size : 20px;
+                line-height : 44px;
+                text-align : center;
+                text-decoration : none;
+                color : $letterH1;
+            }
+            & a:hover {
+                color : #fff;
+            }
+        }
+    }
+}
+
+
+
+/*----------------------Estilo barra de navegación---------------------------*/
+#contenedor{
+    background-color: none;
+    border-radius:15px;
+    padding:200px 100px;  
+}
+
+h1{
+    /*font: 100% $font-primary;*/
+    color: $letterH1;
+    font-size: 100px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;}
