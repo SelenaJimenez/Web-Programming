@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+
+{% block head %}
+<link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/style2.css')}}">
+{% endblock %}
+
+
+{% block title %}
+    Store
+{% endblock %}
+
+
+
+{% block body %}
+
+	<div class="navbar navbar-light" style="background-color: #ec6d45;">
+		<div>
+			<a href="{{ url_for('logout') }}">
+				<button class="btn btn-outline-light my-2 my-sm-0 mr-2" type="button">Logout</button>
+			</a>
+			
+			<a href="{{ url_for('book') }}">
+				<button class="btn btn-outline-light my-2 my-sm-0 mr-2" type="button">Search other book</button>
+			</a>
+		</div>
+	</div>
+
+        <section class="container content-section">
+            <h2 class="section-header">---Buy the book!---</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">{{  title  }}</span>
+                    <img class="shop-item-image" src="static/707.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">$19.99</span>
+                        <button class="btn btn-primary shop-item-button" type="button">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container content-section">
+            <h2 class="section-header">Cart</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <button class="btn btn-primary btn-purchase" type="button">Purchase</button>
+        </section>
+
+
+        <script src="{{ url_for('static', filename='index.js') }}"></script>
+{% endblock %}

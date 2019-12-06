@@ -1,0 +1,10 @@
+.contenedor {
+  background-color: rgba(221, 221, 221, 0.466);
+  border-radius: 15px;
+  /*padding: 100px 50px;*/
+}
+
+h1{
+    color:blueviolet;
+    text-align: center;
+}

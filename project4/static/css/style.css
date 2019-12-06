@@ -1,0 +1,38 @@
+.contenedor {
+  background-color: rgba(255, 169, 169, 0.596);
+  border-radius: 35px;
+  padding: 40px 40px;
+  margin-top: 40px; 
+  margin-bottom: 40px;
+}
+
+h1{
+    color:#d44d4d;
+    text-align: center;
+}
+
+a{
+  font-size: larger;
+  color: blueviolet;
+  
+  border-radius: 35px;
+  
+}
+#stat{
+	font-size: larger;
+  color: blueviolet;
+  
+  border-radius: 35px;
+	padding-top: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px; 
+	background-color: rgba(238, 151, 151, 0.815);
+}
+
+.pic{
+  margin-top: 40px; 
+  margin-bottom: 40px;
+  padding: 40px 40px;
+  
+}

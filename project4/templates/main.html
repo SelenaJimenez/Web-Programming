@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Project 1: Books
+{% endblock %}
+
+{% block body %}
+
+		<div class="navbar navbar-light" style="background-color: #ec6d45;">
+			<div>
+				<a href="{{ url_for('logout') }}">
+					<button class="btn btn-outline-light my-2 my-sm-0 mr-2" type="button">Logout</button>
+				</a>
+			</div>
+		</div>
+
+        
+    <center>    
+		<h1>---Books: Start---</h1>
+         <h1>{{ message }}</h1>         
+    </center>
+    <form action="{{ url_for('book') }}" method="post">
+        <div class="form-group">
+            <li>
+                <input type="integer" name="isbn" placeholder="ISBN">
+            </li>
+        </div>
+
+        <div class="form-group">
+            <li>
+                <input type="text" name="title" placeholder="Title">
+            </li>
+        </div>
+
+        <div class="form-group">                    
+            <li>
+                <input type="text" name="author" placeholder="Author">
+            </li>
+        </div>
+                    
+        <button class="btn btn-danger">Search</button>
+       
+        {{ error }}
+
+    </form>
+
+    <ul>       
+    {% for book in book %}
+        <li>
+            <a href="{{ url_for('isbn', isbn=book.isbn) }}">            
+            {{ book.isbn }}   ,   {{ book.title }}   ,  {{ book.author }} 
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
