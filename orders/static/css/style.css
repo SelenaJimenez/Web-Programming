@@ -1,0 +1,27 @@
+.contenedor {
+  background-color: rgba(255, 169, 169, 0.596);
+  border-radius: 35px;
+  padding: 40px 40px;
+  margin-top: 40px; 
+  margin-bottom: 40px;
+}
+
+h1{
+    color:#d44d4d;
+    text-align: center;
+}
+
+a{
+  font-size: larger;
+  color: blueviolet;
+  background-color: rgba(238, 151, 151, 0.815);
+  border-radius: 35px;
+  
+}
+
+.pic{
+  margin-top: 40px; 
+  margin-bottom: 40px;
+  padding: 40px 40px;
+  
+}
